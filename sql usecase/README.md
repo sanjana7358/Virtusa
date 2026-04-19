@@ -1,153 +1,138 @@
-Banking System Simulation (Java Project)
+Retail Insights Data Analyst (SQL Project)
 
 Project Overview
 
-The Banking System Simulation is a Java-based application that models core banking operations such as account creation, deposits, withdrawals, fund transfers, and transaction tracking. It demonstrates real-world banking workflows using object-oriented programming principles.
+This project simulates a real-world business scenario for a retail supermarket chain, "FreshMart." The goal is to analyze inventory and sales data to identify inefficiencies such as overstocking and unsold products.
 
----
+The system generates a **Stock Health Report** to help optimize inventory management and improve revenue.
+
+
+
+Business Problem
+
+FreshMart is facing two major issues:
+
+* Overstocking items that do not sell
+* Running out of items that are in demand
+
+To solve this, a data-driven approach is required to analyze product performance and inventory health.
+
+
 
 Objectives
 
-* Simulate core banking operations
-* Manage user accounts and transactions
-* Ensure secure and structured data handling
-* Demonstrate object-oriented design concepts
+* Identify products nearing expiration
+* Detect dead stock (unsold items)
+* Analyze category-wise revenue contribution
+* Support better inventory decision-making
 
----
 
-Features
 
-* Create account (Savings/Current)
-* Deposit and withdraw money
-* Transfer funds between accounts
-* Check account balance
-* Maintain transaction history
-* Basic user authentication (username and password)
+Database Schema
 
----
+The project uses three main tables:
+
+1. Products
+
+* ProductID (Primary Key)
+* ProductName
+* CategoryID (Foreign Key)
+* ExpiryDate
+* StockCount
+
+2. Categories
+
+* CategoryID (Primary Key)
+* CategoryName
+
+3. SalesTransactions
+
+* TransactionID (Primary Key)
+* ProductID (Foreign Key)
+* QuantitySold
+* TransactionDate
+
+
+
+Key Features / Queries
+
+1. Expiring Soon Products
+
+Find products that:
+
+* Expire within the next 7 days
+* Have stock greater than 50
+
+2. Dead Stock Analysis
+
+Identify products that:
+
+* Exist in inventory
+* Have **no sales transactions in the last 60 days**
+
+3. Revenue Contribution
+
+Calculate:
+
+* Total revenue per category
+* Identify the category generating the highest revenue
+
+
 
 Technologies Used
 
-* Java (Core Java)
-* Object-Oriented Programming (Encapsulation, Inheritance, Abstraction)
-* Collections Framework
-* JDBC (MySQL) for database integration
-* Swing (optional) for graphical user interface
+* SQL (MySQL / any relational DB)
+* Basic database design concepts
+* Aggregate functions (SUM, GROUP BY)
+* Joins and subqueries
 
----
 
-Project Structure
-
-BankingSystem/
-│
-├── BankSystem.java
-├── DBConnection.java
-├── BankGUI.java
-└── README.md
-
----
-
-Database Setup
-
-1. Create database:
-
-```id="d2y3f1"
-Create database BankDB;
-Use BankDB;
-```
-
-2. Create Accounts table:
-
-```id="p4z9n2"
-Create table Accounts (
-    acc_no int primary key,
-    name varchar(50),
-    balance double,
-    username varchar(50),
-    password varchar(50)
-);
-```
-
-3. Create Transactions table:
-
-```id="x8q7k5"
-Create table Transactions (
-    id int auto_increment primary key,
-    acc_no int,
-    type varchar(50),
-    amount double,
-    date timestamp default current_timestamp
-);
-```
-
----
 
 How to Run
 
-1. Compile the Java files:
+1. Open your SQL environment (MySQL Workbench / CLI)
+2. Run the SQL script:
 
-```id="m1k9v3"
-javac *.java
-```
+   * Create tables
+   * Insert sample data
+   * Execute queries
+3. View results in result grid
 
-2. Run the application:
 
-```id="t7h2c6"
-java BankGUI
-```
 
-3. Ensure MySQL server is running and database connection details are correct in `DBConnection.java`.
+Sample Output
 
----
+* List of products expiring soon
+* Dead stock items (unsold products)
+* Category-wise revenue report
 
-Functional Modules
 
-Account Management
 
-* Create new user accounts
-* Store account details in database
+Concepts Covered
 
-Transactions
+* Database schema design
+* Joins and relationships
+* Aggregate functions
+* Filtering and date conditions
+* Real-world data analysis
 
-* Deposit money
-* Withdraw money with balance validation
-* Transfer funds between accounts
 
-Balance Inquiry
-
-* Retrieve current balance from database
-
-Transaction History
-
-* Store and display transaction records
-
----
-
-Concepts Used
-
-* Object-Oriented Programming (classes, methods, encapsulation)
-* Database connectivity using JDBC
-* SQL queries for data manipulation
-* Event handling (GUI interactions)
-
----
 
 Future Enhancements
 
-* Enhanced authentication and security
-* Role-based access (admin/user)
-* Web-based interface
-* Transaction reports and analytics
-* Integration with payment gateways
+* Add dashboard visualization (Power BI / Tableau)
+* Automate alerts for expiring products
+* Integrate with frontend (web app)
+* Add predictive analytics for demand
 
----
+
 
 Author
 
 Sanjana B
 
----
+
 
 Conclusion
 
-This project demonstrates the implementation of a basic banking system using Java, combining object-oriented programming with database integration to simulate real-world financial operations.
+This project demonstrates how SQL can be used to solve real-world business problems by analyzing inventory and sales data. It helps improve decision-making and operational efficiency in retail systems.
