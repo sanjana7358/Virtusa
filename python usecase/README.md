@@ -1,108 +1,139 @@
-SmartPay Utility Bill Generator (FareCalc)
+FareCalc - Travel Fare Optimizer (Python Project)
 
 Project Overview
 
-The SmartPay Utility Bill Generator is a Java-based application that calculates electricity or water bills based on units consumed. It uses progressive slab rates and applies tax to encourage efficient resource usage.
+FareCalc is a Python-based application designed to simulate a ride-sharing fare calculation system. It calculates the final ride cost based on distance, vehicle type, and time of day using surge pricing.
 
----
+This project mimics real-world ride-hailing platforms like Uber and Ola, where pricing dynamically changes based on demand and conditions.
+
+
+
+Business Problem
+
+A ride-sharing startup, "CityCab," needs an efficient backend system to calculate fares. The fare varies depending on:
+
+* Distance traveled
+* Type of vehicle selected
+* Time of day (peak hours)
+
+The goal is to provide accurate and dynamic pricing for users.
+
+
 
 Objectives
 
-* Calculate bill based on units consumed
-* Apply slab-based pricing logic
-* Validate meter readings
-* Generate a formatted digital receipt
-* Handle multiple customer inputs
+* Calculate fare based on distance and vehicle type
+* Apply surge pricing during peak hours
+* Handle invalid inputs gracefully
+* Generate a formatted price receipt
 
 ---
 
 Features
 
-* Slab-based billing system
-* Input validation (prevents incorrect readings)
-* Digital receipt generation
-* Continuous input until user exits
-* Interface-based design (Billable interface)
+* Supports multiple vehicle types (Economy, Premium, SUV)
+* Dynamic fare calculation using dictionary mapping
+* Surge pricing (1.5x multiplier during peak hours)
+* Error handling for invalid vehicle types
+* User-friendly console interaction
+* Formatted output receipt
 
----
+
+
+Pricing Logic
+
+Base Rates (per km)
+
+* Economy → 10
+* Premium → 18
+* SUV → 25
+
+Surge Pricing
+
+* Peak Hours: 17 to 20 (5 PM to 8 PM)
+* Surge Multiplier: 1.5x
+
+
+
+Example Calculation
+
+Distance: 10 km
+Vehicle: Premium
+Time: 18 (Peak Hour)
+
+Base Fare = 10 × 18 = 180
+Final Fare = 180 × 1.5 = 270
+
+
 
 Technologies Used
 
-* Java (Core Java)
-* OOP Concepts (Interface, Classes, Methods)
-* Conditional Statements (if-else)
-* Scanner (User Input)
+* Python 3
+* Dictionaries
+* Functions
+* Conditional Statements
+* Exception Handling
 
----
 
-Project Structure
-
-FareCalc/
-│
-├── SmartPay.java
-└── README.md
-|__FareCalc-Output.png
-
----
 
 How to Run
 
-1. Compile the program:
-
-```id="g3u9cj"
-javac SmartPay.java
-```
-
-2. Run the program:
-
-```id="b0i1y5"
-java SmartPay
-```
-
----
-
-Sample Output
+1. Open terminal in project folder
+2. Run the script:
 
 ```
-Enter Customer Name: Sanjana
-Enter Previous Meter Reading: 100
-Enter Current Meter Reading: 250
-
-===== DIGITAL RECEIPT =====
-Customer Name: Sanjana
-Units Consumed: 150
-Tax Amount: $30.0
-Total Bill: $330.0
-===========================
+python3 farecalc.py
 ```
 
----
+3. Enter:
 
-Concepts Used
+   * Distance (in km)
+   * Vehicle type (Economy / Premium / SUV)
+   * Hour of day (0–23)
 
-* Interface implementation
-* Encapsulation
-* Looping (while loop)
-* Conditional logic (if-else slabs)
+
+
+ Sample Output
+
+```
+===== FARE RECEIPT =====
+Distance: 10 km
+Vehicle: Premium
+Time: 18
+
+Base Fare: ₹180
+Surge Applied: Yes (1.5x)
+
+Final Fare: ₹270
+========================
+```
+
+
+Concepts Covered
+
+* Dictionary mapping
+* Function creation
 * Input validation
+* Error handling (try-except)
+* Real-world pricing logic
 
----
+
 
 Future Enhancements
 
-* GUI version (Java Swing/JavaFX)
-* Database integration (JDBC + MySQL)
-* Multi-utility billing (Electricity + Water)
-* Export bill as PDF
+* Add GUI using Tkinter
+* Integrate GPS-based distance calculation
+* Add user authentication system
+* Convert into web application (Flask)
 
----
+
 
 Author
 
 Sanjana B
 
----
+
 
 Conclusion
 
-This project demonstrates how real-world billing systems work using Java, incorporating structured logic, validation, and user interaction.
+FareCalc demonstrates how dynamic pricing systems work in real-world applications. It combines Python fundamentals with practical problem-solving to create an efficient and user-friendly fare calculation system.
