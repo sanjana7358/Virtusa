@@ -27,8 +27,6 @@ Features
 Technologies Used
 
 * Java (Core Java)
-* OOP Concepts
-* String Handling
 * Conditional Statements (if-else)
 
 
