@@ -4,7 +4,7 @@ Project Overview
 
 The Password Validator is a Java-based application that checks whether a given password meets specific security criteria. It helps ensure strong password creation by validating length, characters, and complexity rules.
 
----
+
 
 Objectives
 
@@ -12,18 +12,17 @@ Objectives
 * Ensure strong and secure password creation
 * Provide feedback for invalid passwords
 
----
+
 
 Features
 
 * Minimum length validation
 * Checks for uppercase and lowercase letters
 * Ensures presence of digits
-* Validates special characters
 * Displays appropriate error messages
 * Confirms valid password
 
----
+
 
 Technologies Used
 
@@ -32,7 +31,7 @@ Technologies Used
 * String Handling
 * Conditional Statements (if-else)
 
----
+
 
 Project Structure
 
@@ -41,7 +40,7 @@ PasswordValidator/
 ├── PasswordValidator.java
 └── README.md
 
----
+
 
 How to Run
 
@@ -57,7 +56,7 @@ javac PasswordValidator.java
 java PasswordValidator
 ```
 
----
+
 
 Sample Output
 
@@ -78,7 +77,7 @@ Must contain a digit
 Must contain special character
 ```
 
----
+
 
 Concepts Used
 
@@ -87,22 +86,21 @@ Concepts Used
 * Character analysis
 * User input handling
 
----
+
 
 Future Enhancements
 
 * GUI version (Java Swing/JavaFX)
 * Password strength meter
-* Integration with login systems
 * Database storage for users
 
----
+
 
 Author
 
-**Sanjana B**
+Sanjana B
 
----
+
 
 Conclusion
 
