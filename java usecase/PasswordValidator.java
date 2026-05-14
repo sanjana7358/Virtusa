@@ -23,7 +23,7 @@ public class PasswordValidator {
             } else if (!hasDigit) {
                 System.out.println("Missing digit");
             } else {
-                System.out.println("✅ Password is strong!");
+                System.out.println("Password is strong!");
                 break;
             }
         }
