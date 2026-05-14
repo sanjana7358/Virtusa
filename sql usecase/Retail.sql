@@ -90,7 +90,7 @@ From Products
 Where expiry_date <= Curdate() + Interval 7 Day
 And stock_count > 50;
 -- Dead Stock
-Select p.product_name,p.product_id
+Select p.product_name
 From Products p
 Left Join SalesTransactions s
 On p.product_id = s.product_id
